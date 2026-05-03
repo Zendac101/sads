@@ -1,4 +1,4 @@
-/* RESET EVERYTHING */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,6 @@ body {
     overflow: hidden;
 }
 
-/* BACKGROUND IMAGE */
 body::before {
     content: "";
     position: absolute;
@@ -31,12 +30,11 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 0.9; /* FIXED (was 90%) */
+    opacity: 0.9; 
 
     z-index: -2;
 }
 
-/* VIGNETTE EFFECT */
 body::after {
     content: "";
     position: absolute;
@@ -61,19 +59,15 @@ body::after {
 
     text-align: center;
 
-    /* 3D DEPTH EFFECT */
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.25),
         0 5px 15px rgba(0, 0, 0, 0.15);
 
-    /* subtle lift */
     transform: translateY(-2px);
 
-    /* smooth hover animation */
     transition: all 0.3s ease;
 }
 
-/* OPTIONAL: hover 3D lift */
 .card:hover {
     transform: translateY(-8px);
     box-shadow:
@@ -81,7 +75,6 @@ body::after {
         0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* LOGO */
 .logo img {
     width: 70px;
     margin-bottom: 5px;

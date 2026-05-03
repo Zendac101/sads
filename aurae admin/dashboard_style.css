@@ -9,13 +9,11 @@ body {
     background: #f3f4f6;
 }
 
-/* LAYOUT */
 .container {
     display: flex;
     height: 100vh;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 240px;
     background: #AFCBBA;
@@ -34,7 +32,7 @@ body {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    border-radius: 8px; /* optional soft edges */
+    border-radius: 8px; 
 }
 
 .circle {
@@ -48,7 +46,6 @@ body {
     font-weight: bold;
 }
 
-/* MENU */
 .menu li {
     list-style: none;
     margin-bottom: 10px;
@@ -69,13 +66,11 @@ body {
     color: white;
 }
 
-/* MAIN */
 .main {
     flex: 1;
     padding: 20px;
 }
 
-/* TOPBAR */
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -83,7 +78,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* SEARCH (CLEAN FIGMA STYLE) */
 .search-box {
     display: flex;
     align-items: center;
@@ -93,15 +87,15 @@ body {
     padding: 8px 12px;
     border-radius: 20px;
 
-    background: transparent; /* remove box */
-    border: 1px solid #ddd;  /* thin line like Figma */
+    background: transparent; 
+    border: 1px solid #ddd;  
 }
 
 .search-box input {
     border: none;
     outline: none;
     width: 100%;
-    background: transparent; /* remove inner box */
+    background: transparent; 
 }
 
 .search-box i {
@@ -109,7 +103,6 @@ body {
     font-size: 14px;
 }
 
-/* USER AREA */
 .user {
     display: flex;
     align-items: center;
@@ -149,7 +142,6 @@ body {
     color: gray;
 }
 
-/* HEADER FIX (FIGMA STYLE CLEAN LAYOUT) */
 .header {
     display: flex;
     justify-content: space-between;
@@ -157,7 +149,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* LEFT TEXT */
 .header-left h1 {
     font-size: 28px;
     margin-bottom: 5px;
@@ -168,20 +159,17 @@ body {
     font-size: 14px;
 }
 
-/* RIGHT BUTTONS */
 .header-right {
     display: flex;
     gap: 10px;
 }
 
-/* MAKE BUTTONS LOOK LIKE FIGMA PILLS */
 .header-right button {
     width: 140px;
     padding: 10px 0;
     border-radius: 20px;
 }
 
-/* ACTION BUTTONS */
 .actions {
     display: flex;
     gap: 10px;
@@ -193,7 +181,6 @@ body {
     border-radius: 25px;
 }
 
-/* CARDS */
 .cards {
     display: flex;
     gap: 15px;
@@ -207,13 +194,11 @@ body {
     border-radius: 12px;
 }
 
-/* CONTENT */
 .content {
     display: flex;
     gap: 20px;
 }
 
-/* CHART */
 .chart {
     flex: 3;
     height: 300px;
@@ -224,12 +209,10 @@ body {
     justify-content: center;
 }
 
-/* SIDE PANEL */
 .sidepanel {
     flex: 1;
 }
 
-/* CONTACT TEAM FIXED */
 .contacts {
     background: #AFCBBA;
     padding: 15px;
