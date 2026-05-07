@@ -32,7 +32,7 @@ body {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
 .circle {
@@ -87,15 +87,15 @@ body {
     padding: 8px 12px;
     border-radius: 20px;
 
-    background: transparent; 
-    border: 1px solid #ddd;  
+    background: transparent;
+    border: 1px solid #ddd;
 }
 
 .search-box input {
     border: none;
     outline: none;
     width: 100%;
-    background: transparent; 
+    background: transparent;
 }
 
 .search-box i {
