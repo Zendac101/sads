@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurae Admin</title>
+    <link rel="preload" as="image" href="aurae_pic.png">
+    <link rel="stylesheet" href="login_style.css">
+
+
+</head>
+
+
+
 <?php
 require_once("connection\conn.php");
 $sql_admin="SELECT * FROM admin_info";
@@ -13,20 +29,11 @@ $userlist=json_encode($row_user)?:'[]';
 
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurae Admin</title>
-    <link rel="stylesheet" href="login_style.css">
-</head>
 
 <body>
 
-    <form class="card" method= "" action="">
+    <form class="card" method= "" action="" >
 
         <div class="logo">
             <img src="logo_aurae.png">
@@ -39,13 +46,13 @@ $userlist=json_encode($row_user)?:'[]';
         <input type="text" id="email" name="email" placeholder="username@gmail.com" required>
         <input type="password" id="password" name="password" placeholder="password" required>
 
-        <button id="login_but">
+        <button type="button" id="login_but">
             Login
         </button>
         
         <p class="divider">or continue with</p>
 
-        <button class="google" onclick="window.location.href='sign_in.php'">
+        <button type="button" class="google" onclick="window.location.href='sign_in.php';" >
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
             Continue with Google
         </button>
@@ -59,9 +66,10 @@ $userlist=json_encode($row_user)?:'[]';
     </form>
     <script >
         const username=document.getElementById("email");
-        const passsword=document.getElementById("password")
+        const password=document.getElementById("password")
         const button_login=document.getElementById("login_but")
         const form=document.getElementsByClassName("card")
+        const color="#e17e7e"
 
         const admin=<?php echo $adminlist ?>;
         const user=<?php echo $userlist ?>;
@@ -73,27 +81,29 @@ $userlist=json_encode($row_user)?:'[]';
 
 
             if (admin_exist){
-                if (passsword.value===admin_exist.password){
+                username.style.backgroundColor='';
+                if (password.value===admin_exist.password){
                     window.location.href="dashboard.php";
                 }
                 else{
-                    alert(admin_exist.passsword);
+                    password.style.backgroundColor=color;
 
                 }
 
             }
             else if (user_exist){
-                if (passsword.value=== user_exist.password){
+                username.style.backgroundColor="";
+                if (password.value=== user_exist.password){
                     window.location.href="dashboard.php";
 
                 }
                 else{
-                    alert("failed user");
+                    password.style.backgroundColor=color;
                 }
             }
 
             else{
-                alert("üser not found");
+                username.style.backgroundColor=color;
             }
         })
     </script>
