@@ -28,6 +28,11 @@ body {
     margin-bottom: 30px;
 }
 
+.logo h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
 .logo-img {
     width: 45px;
     height: 45px;
@@ -150,8 +155,7 @@ body {
 }
 
 .header-left h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 22px;
 }
 
 .header-left p {
@@ -253,7 +257,6 @@ button {
     border: none;
     cursor: pointer;
 }
-
 
 .green {
     background: #7ca982;

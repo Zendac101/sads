@@ -28,6 +28,11 @@ body {
     margin-bottom: 30px;
 }
 
+.logo h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
 .logo-img {
     width: 45px;
     height: 45px;
@@ -137,7 +142,7 @@ body {
 }
 
 .header-left h1 {
-    font-size: 26px;
+    font-size: 22px;
 }
 
 .header-left p {

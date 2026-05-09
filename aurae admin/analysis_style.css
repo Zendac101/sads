@@ -28,6 +28,11 @@ body {
     margin-bottom: 30px;
 }
 
+.logo h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
 .logo-img {
     width: 45px;
 }
@@ -117,8 +122,13 @@ body {
     margin-bottom: 20px;
 }
 
-.header p {
+.header-left h1 {
+    font-size: 22px;
+}
+
+.header-left p {
     color: gray;
+    font-size: 14px;
 }
 
 .chart-box {
