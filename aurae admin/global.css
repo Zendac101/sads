@@ -1,0 +1,37 @@
+.sidebar {
+    width: 240px;
+    background: #AFCBBA;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    transform-origin: center;
+}
+
+.menu li a:hover {
+    background: #8fbf96;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.menu li a i {
+    transition: transform 0.25s ease;
+}
+
+.menu li a:hover i {
+    transform: scale(1.15);
+}
