@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurae Admin</title>
 
-<<<<<<< HEAD
-    <link rel="stylesheet" href="dashboard_style.css">
-=======
 <link rel="stylesheet" href="dashboard_style.css">
->>>>>>> parent of ff3bd52 (add global.css file, add animation for sidebar while hovering the mouse)
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -101,14 +97,6 @@
                     <div class="contacts">
                         <h4>Contact Team</h4>
 
-<<<<<<< HEAD
-                        <div class="contact-item">
-                            <div class="avatar-small"></div>
-                            <div>
-                                <p>Sofia</p>
-                                <span>sofia@gmail.com</span>
-                            </div>
-=======
             <div class="card">
                 <p>Most Affected Pollutant</p>
                 <h2>NO₂</h2>
@@ -131,7 +119,6 @@
                         <div>
                             <p>Sofia</p>
                             <span>sofia@gmail.com</span>
->>>>>>> parent of ff3bd52 (add global.css file, add animation for sidebar while hovering the mouse)
                         </div>
 
                         <div class="contact-item">

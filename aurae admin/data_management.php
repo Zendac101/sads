@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-=======
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
@@ -13,47 +8,11 @@
 <link rel="stylesheet" href="data_management_style.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
->>>>>>> parent of ff3bd52 (add global.css file, add animation for sidebar while hovering the mouse)
 </head>
 <body>
     
 
-   
-   
-   button_login.addEventListener("click",function(event){
-            event.preventDefault();
-            const admin_exist=admin.find(admin=>admin.username===username.value)
-            const user_exist=user.find(user=>user.username===username.value)
 
-
-            if (admin_exist){
-                username.style.backgroundColor='';
-                if (password.value===admin_exist.password){
-                    window.location.href="dashboard.php";
-                }
-                else{
-                    password.style.backgroundColor=color;
-
-                }
-
-            }
-            else if (user_exist){
-                username.style.backgroundColor="";
-                if (password.value=== user_exist.password){
-                    window.location.href="dashboard.php";
-
-<<<<<<< HEAD
-                }
-            +
-        ++---
-    
-    
-    
-    </body>
-</html>
-   6
-   +
-=======
             <div class="user">
                 <div class="icons">
                     <i class="fas fa-envelope"></i>
@@ -143,4 +102,3 @@
 
 </body>
 </html>
->>>>>>> parent of ff3bd52 (add global.css file, add animation for sidebar while hovering the mouse)

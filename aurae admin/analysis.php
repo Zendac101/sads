@@ -1,9 +1,5 @@
-<main class="main">
-    <iframe src="dashboard.html" frameborder="0" style="border: 0;" , height="100%"></iframe>
 
-<<<<<<< HEAD
-</main>
-=======
+
 <link rel="stylesheet" href="analysis_style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -19,12 +15,12 @@
         </div>
 
         <ul class="menu">
-            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li><a href="data_management.html"><i class="fas fa-database"></i> Data Management</a></li>
-            <li class="active"><a href="analysis.html"><i class="fas fa-chart-line"></i> Analysis</a></li>
-            <li><a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
-            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
-            <li><a href="support.html"><i class="fas fa-life-ring"></i> Support / Help</a></li>
+            <li><a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="data_management.php"><i class="fas fa-database"></i> Data Management</a></li>
+            <li class="active"><a href="analysis.php"><i class="fas fa-chart-line"></i> Analysis</a></li>
+            <li><a href="reports.php"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li><a href="settings.php"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="support.php"><i class="fas fa-life-ring"></i> Support / Help</a></li>
         </ul>
     </aside>
 
@@ -85,5 +81,4 @@
 </div>
 
 </body>
-</html>
->>>>>>> parent of ff3bd52 (add global.css file, add animation for sidebar while hovering the mouse)
+</php>
