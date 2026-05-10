@@ -100,6 +100,7 @@ input {
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
+
 }
 
 button {
@@ -115,6 +116,14 @@ button:first-of-type {
     background: black;
     color: white;
 }
+
+button:hover {
+    background: #3e433d;
+}
+
+
+
+
 
 .google {
     display: flex;

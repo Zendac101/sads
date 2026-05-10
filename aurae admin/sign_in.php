@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurae Admin</title>
+    <link rel="preload" as="image" href="aurae_pic.png">
     <link rel="stylesheet" href="sign_in_style.css">
 </head>
-a
+
 
 <body>
 
-    <form class="card" method="get" action="dashboard.php">
+    <form class="card" method="" action="">
 
         <div class="logo">
             <img src="logo_aurae.png">
@@ -30,8 +31,8 @@ a
         <input type="password" id="password" name="password" placeholder="password" minlength="8" required>
         <input type="password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
 
-        <button>
-            Sign up with email
+        <button id="submits_btn">
+            Sign up 
         </button>
 
 
@@ -43,7 +44,7 @@ a
             <span class="link">Terms of Service</span> and
             <span class="link">Privacy Policy</span>
         </p>
-
+        <script src="sign_in_script.js"></script>
     </form>
 
 </body>
