@@ -59,3 +59,46 @@
     color: gray;
     font-size: 14px;
 }
+
+.menu-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: #AFCBBA;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar {
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 90px;
+}
+
+.sidebar.collapsed h2 {
+    display: none;
+}
+
+.sidebar.collapsed .menu li a {
+    justify-content: center;
+    font-size: 0;
+}
+
+.sidebar.collapsed .menu li a i {
+    font-size: 18px;
+}

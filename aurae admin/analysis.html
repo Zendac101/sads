@@ -33,6 +33,11 @@
     <main class="main">
 
         <div class="topbar">
+
+            <button id="toggleSidebar" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Search task">
@@ -85,6 +90,14 @@
     </main>
 
 </div>
+
+<script>
+document.getElementById("toggleSidebar")
+.addEventListener("click", function () {
+    document.querySelector(".sidebar")
+    .classList.toggle("collapsed");
+});
+</script>
 
 </body>
 </html>
