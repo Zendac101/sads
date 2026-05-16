@@ -12,12 +12,6 @@ enter.addEventListener("click", function () {
         console.log("success");
         form.submit();
 
-        //alert("Sign up Sucess");
-
-
-
-
-
 
 
     }
