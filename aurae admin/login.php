@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,27 +14,11 @@
 </head>
 
 
-
-<?php
-require_once("connection\conn.php");
-$sql_admin="SELECT * FROM admin_info";
-$sql_user="SELECT * FROM user_info";
-
-$res_admin=$conn->query($sql_admin);
-$res_user=$conn->query($sql_user);
-$row_admin=$res_admin->fetchAll(PDO::FETCH_ASSOC);
-$row_user=$res_user->fetchAll(PDO::FETCH_ASSOC);
-$adminlist=json_encode($row_admin)?:'[]';
-$userlist=json_encode($row_user)?:'[]';
-?>
-
-
-
-
-
 <body>
 
-    <form class="card" method= "" action="" >
+
+
+    <form class="card" method= "POST" action="connection/login_ver.php" >
 
         <div class="logo">
             <img src="logo_aurae.png">
@@ -43,10 +28,12 @@ $userlist=json_encode($row_user)?:'[]';
 
         <p>Enter your email to login for this app</p>
 
+
+
         <input type="text" id="email" name="email" placeholder="username@gmail.com" required>
         <input type="password" id="password" name="password" placeholder="password" required>
 
-        <button type="button" id="login_but">
+        <button type="submit" id="login_but">
             Login
         </button>
         
@@ -64,49 +51,7 @@ $userlist=json_encode($row_user)?:'[]';
         </p>
 
     </form>
-    <script >
-        const username=document.getElementById("email");
-        const password=document.getElementById("password")
-        const button_login=document.getElementById("login_but")
-        const form=document.getElementsByClassName("card")
-        const color="#e17e7e"
-
-        const admin=<?php echo $adminlist ?>;
-        const user=<?php echo $userlist ?>;
-
-        button_login.addEventListener("click",function(event){
-            event.preventDefault();
-            const admin_exist=admin.find(admin=>admin.username===username.value)
-            const user_exist=user.find(user=>user.username===username.value)
-
-
-            if (admin_exist){
-                username.style.backgroundColor='';
-                if (password.value===admin_exist.password){
-                    window.location.href="dashboard.php";
-                }
-                else{
-                    password.style.backgroundColor=color;
-
-                }
-
-            }
-            else if (user_exist){
-                username.style.backgroundColor="";
-                if (password.value=== user_exist.password){
-                    window.location.href="dashboard.php";
-
-                }
-                else{
-                    password.style.backgroundColor=color;
-                }
-            }
-
-            else{
-                username.style.backgroundColor=color;
-            }
-        })
-    </script>
+    
 </body>
 
 </html>

@@ -1,24 +1,17 @@
 const password = document.getElementById('password');
 const con_password = document.getElementById('con_password');
-const enter = document.getElementById('submits_btn');
 const form = document.querySelector('.card');
 
+form.addEventListener("submit", function (event) {
 
-enter.addEventListener("click", function () {
-    event.preventDefault();
-    if (password.value == con_password.value) {
-        form.method = "post";
-        form.action = 'connection/user_reg.php';
-        console.log("success");
-        form.submit();
+    if (password.value !== con_password.value) {
+        event.preventDefault();
 
-
-
-    }
-    else {
-        alert('failed');
-
-
-        console.log("failed");
+        //alert("Passwords do not match!");
+        password.style.backgroundColor = "#e17e7e";
+        con_password.style.backgroundColor = "#e17e7e";
+        console.log("Registration failed");
+    } else {
+        console.log("Sucess");
     }
 });

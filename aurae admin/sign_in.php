@@ -12,7 +12,7 @@
 
 <body>
 
-    <form class="card" method="" action="">
+    <form class="card" method="POST" action="connection/user_reg.php">
 
         <div class="logo">
             <img src="logo_aurae.png">
@@ -31,7 +31,7 @@
         <input type="password" id="password" name="password" placeholder="password" minlength="8" required>
         <input type="password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
 
-        <button id="submits_btn">
+        <button type="submit" id="submits_btn">
             Sign up 
         </button>
 
