@@ -5,13 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
+<link rel="stylesheet" href="global.css">
 <link rel="stylesheet" href="data_management_style.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-        
 
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="logo_aurae.png" class="logo-img">
+            <h2>Aurae Admin</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li class="active"><a href="data_management.html"><i class="fas fa-database"></i> Data Management</a></li>
+            <li><a href="analysis.html"><i class="fas fa-chart-line"></i> Analysis</a></li>
+            <li><a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="support.html"><i class="fas fa-life-ring"></i> Support / Help</a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <button id="toggleSidebar" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search task">
+            </div>
 
             <div class="user">
                 <div class="icons">
@@ -89,7 +120,6 @@
 
         </div>
 
-        <!-- ACTION BUTTONS -->
         <div class="table-actions">
             <button class="green">Upload CSV</button>
             <button class="light">Replace Data</button>
@@ -99,6 +129,14 @@
     </main>
 
 </div>
+
+<script>
+document.getElementById("toggleSidebar")
+.addEventListener("click", function () {
+    document.querySelector(".sidebar")
+    .classList.toggle("collapsed");
+});
+</script>
 
 </body>
 </html>
