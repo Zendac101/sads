@@ -6,6 +6,7 @@
 <title>Aurae Admin</title>
 
 <link rel="stylesheet" href="settings_style.css">
+<link rel="stylesheet" href="global.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
