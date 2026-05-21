@@ -1,0 +1,49 @@
+.data-table {
+
+    background: #AFCBBA;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+
+}
+
+table {
+    width: 97%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: 12%;
+    padding: 10px;
+    font-size: 13px;
+    border: #91bfa4 solid;
+
+}
+
+th {
+    text-align: center;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+html {
+
+    scrollbar-color: #728175 #AFCBBA;
+
+
+    scrollbar-width: thin;
+}
+
+.good {
+    color: green;
+    font-weight: bold;
+}
+
+.moderate {
+    color: orange;
+    font-weight: bold;
+}

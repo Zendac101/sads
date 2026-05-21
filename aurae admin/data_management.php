@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="data_management_style.css">
+<link rel="stylesheet" href="styles/global.css">
+<link rel="stylesheet" href="styles/data_management_style.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -67,9 +67,8 @@
         </div>
 
         <div class="data-table">
-
             <table>
-                <thead>
+                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Location</th>
@@ -81,42 +80,11 @@
                         <th>NO2</th>
                     </tr>
                 </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Jan 02, 2026</td>
-                        <td>Dagupan</td>
-                        <td>62</td>
-                        <td class="moderate">Moderate</td>
-                        <td>0.9</td>
-                        <td>0.17</td>
-                        <td>35</td>
-                        <td>2.3</td>
-                    </tr>
-
-                    <tr>
-                        <td>Jan 02, 2026</td>
-                        <td>Bayambang</td>
-                        <td>50</td>
-                        <td class="good">Good</td>
-                        <td>1.6</td>
-                        <td>0.26</td>
-                        <td>24</td>
-                        <td>4</td>
-                    </tr>
-
-                    <tr>
-                        <td>Jan 02, 2026</td>
-                        <td>Urdaneta</td>
-                        <td>61</td>
-                        <td class="moderate">Moderate</td>
-                        <td>1.1</td>
-                        <td>2.06</td>
-                        <td>28</td>
-                        <td>4</td>
-                    </tr>
-                </tbody>
             </table>
+
+            <iframe src="data_table.php" >
+         
+</iframe>
 
         </div>
 

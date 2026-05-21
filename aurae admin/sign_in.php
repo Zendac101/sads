@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurae Admin</title>
     <link rel="preload" as="image" href="aurae_pic.png">
-    <link rel="stylesheet" href="sign_in_style.css">
+    <link rel="stylesheet" href="styles/sign_in_style.css">
 </head>
 
 

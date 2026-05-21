@@ -13,9 +13,16 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 
     try{
         $sql="INSERT INTO user_info(username,password,date_created,first_name,last_name,email) 
-        VALUES (?,?,?,?,?,?)";
+        VALUES (:username,:password,:date_created,:fname,:lname,:email)";
         $stmt=$conn->prepare($sql);
-        $stmt->execute([$username,$password,date('Y-m-d'),$fname,$lname,$email]);
+        $stmt->execute([
+                        ":username" => $username,               
+                        ":password" => $password,               
+                        ":date_created" => date("Y-m-d"),               
+                        ":fname" => $fname,               
+                        ":lname" => $lname,               
+                        ":email" => $email,               
+                        ]);
         header("Location: ../login.php"); 
     exit();
     }

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="reports_style.css">
+<link rel="stylesheet" href="styles/global.css">
+<link rel="stylesheet" href="styles/reports_style.css">
 
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
         <div class="topbar">
 
             <button id="toggleSidebar" class="menu-btn">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" style="left: 5px;"></i>
             </button>
 
             <div class="search-box">
