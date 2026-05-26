@@ -95,7 +95,9 @@
         <div class="content">
 
             <div class="chart">
-                <canvas id="aqiChart"></canvas>
+                <canvas id="aqiChart">
+                    
+                </canvas>
             </div>
 
             <div class="sidepanel">
