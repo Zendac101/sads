@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="header">
+        <div class="header" >
             <div class="header-left">
                 <h1>Data Management</h1>
                 <p>Easily manage and organize air quality data.</p>
@@ -67,22 +67,9 @@
         </div>
 
         <div class="data-table">
-            <table>
-                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Location</th>
-                        <th>AQI</th>
-                        <th>Status</th>
-                        <th>SO2</th>
-                        <th>CO</th>
-                        <th>O3</th>
-                        <th>NO2</th>
-                    </tr>
-                </thead>
-            </table>
+         
 
-            <iframe src="data_table.php" >
+            <iframe src="data_table.php" scrolling="no" >
          
 </iframe>
 

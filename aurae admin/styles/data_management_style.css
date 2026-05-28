@@ -154,10 +154,10 @@ body {
 
     background-color: #AFCBBA;
     border-radius: 12px;
-    overflow-x: auto;
-    padding: 10px;
-    margin: 10px;
-    height: 60%;
+
+    padding: 5px;
+    margin-bottom: 10px;
+    height: 62%;
 }
 
 iframe {
@@ -165,7 +165,7 @@ iframe {
     width: 100%;
     border: none;
     border-collapse: collapse;
-    height: 90%;
+    height: 100%;
 
 
 }
@@ -204,16 +204,4 @@ button {
 
 .light {
     background: #e5e7eb;
-}
-
-table {
-    width: 95%;
-    border-collapse: collapse;
-}
-
-th {
-    width: 12%;
-    padding: 10px;
-    font-size: 13px;
-
 }
