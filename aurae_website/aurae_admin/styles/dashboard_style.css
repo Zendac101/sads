@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: #AFCBBA;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.logo h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.menu li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+}
+
+.menu li.active a {
+    background: #5e8f65;
+    color: white;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    gap: 8px;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    background: transparent;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+.search-box i {
+    color: gray;
+    font-size: 14px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons i {
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.email {
+    font-size: 11px;
+    color: gray;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.header-left h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.header-left p {
+    color: gray;
+    font-size: 14px;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.header-right button {
+    width: 140px;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    width: 140px;
+    padding: 10px 0;
+    border-radius: 25px;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #AFCBBA;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.chart {
+    flex: 3;
+    height: 300px;
+    background: #AFCBBA;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidepanel {
+    flex: 1;
+}
+
+.contacts {
+    background: #AFCBBA;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.contact-item p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.contact-item span {
+    font-size: 11px;
+    color: gray;
+}
+
+button {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.green {
+    background: #7ca982;
+    color: white;
+}
+
+.light {
+    background: #e5e7eb;
+}
+
+.full {
+    width: 100%;
+    margin-bottom: 10px;
+}
