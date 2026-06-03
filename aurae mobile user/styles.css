@@ -671,7 +671,141 @@ html, body {
 .mini-stat .name { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
 .mini-stat .val { font-size: 14px; font-weight: 700; color: var(--text-primary); }
 
-/* ===================== SETTINGS SCREEN ===================== */
+/* ===================== TRENDS SCREEN ===================== */
+.trends-header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trends-header h1 { font-family: 'DM Serif Display', serif; font-size: 26px; }
+.trends-location {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-secondary);
+}
+.trends-location svg { width: 12px; height: 12px; stroke: var(--text-secondary); }
+
+.period-tabs {
+  display: flex;
+  margin: 16px 24px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid var(--border);
+}
+.period-tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.period-tab.active {
+  background: var(--green-deep);
+  color: white;
+  font-weight: 600;
+}
+
+.chart-card {
+  margin: 0 24px 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 16px 12px;
+  border: 1px solid var(--border);
+}
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.chart-card-title { font-size: 14px; font-weight: 700; }
+.chart-card-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.chart-current-aqi { text-align: right; }
+.chart-aqi-val {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--green-deep);
+  line-height: 1;
+}
+.chart-aqi-lbl { font-size: 10px; color: var(--text-muted); }
+.chart-x-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 4px 0;
+}
+.chart-x-labels span { font-size: 9px; color: var(--text-muted); }
+
+.trends-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 24px;
+  margin-bottom: 4px;
+}
+.trend-stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px 10px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.tsc-icon { font-size: 18px; margin-bottom: 6px; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+.tsc-val { font-size: 20px; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.tsc-val.good { color: var(--aqi-good); }
+.tsc-val.moderate { color: var(--aqi-orange, #f77f00); }
+.tsc-label { font-size: 10px; color: var(--text-muted); margin-top: 4px; font-weight: 600; }
+.tsc-time { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+.pollutant-trends { padding: 0 24px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 4px; }
+.pt-row {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pt-name { font-size: 13px; font-weight: 700; width: 42px; flex-shrink: 0; }
+.pt-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.pt-bar { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.pt-val { font-size: 13px; font-weight: 700; width: 44px; text-align: right; flex-shrink: 0; }
+.pt-unit { font-size: 10px; color: var(--text-muted); width: 32px; flex-shrink: 0; }
+
+.daily-summary { padding: 0 24px; margin-bottom: 16px; }
+.day-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+.day-row:last-child { border-bottom: none; }
+.day-name { font-size: 13px; font-weight: 600; width: 36px; flex-shrink: 0; }
+.day-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.day-bar { height: 100%; border-radius: 4px; }
+.day-aqi { font-size: 13px; font-weight: 700; width: 32px; text-align: right; flex-shrink: 0; }
+.day-status { font-size: 10px; width: 56px; flex-shrink: 0; text-align: right; }
+
+.health-tip-card {
+  margin: 4px 24px 0;
+  background: var(--green-mist);
+  border: 1px solid var(--green-pale);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.health-tip-top {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700; color: var(--green-deep);
+  margin-bottom: 8px;
+}
+.health-tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 .settings-header {
   padding: 20px 24px 16px;
 }
@@ -767,6 +901,144 @@ html, body {
 }
 .toggle.on .toggle-thumb { transform: translateX(20px); }
 
+/* ===================== TRENDS SCREEN ===================== */
+.trends-header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trends-header h1 { font-family: 'DM Serif Display', serif; font-size: 26px; }
+.trends-location {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--text-secondary);
+}
+.trends-location svg { width: 13px; height: 13px; stroke: var(--text-secondary); }
+
+.period-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px 0;
+}
+.period-tab {
+  flex: 1;
+  text-align: center;
+  padding: 9px 0;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.period-tab.active {
+  background: var(--green-deep);
+  color: white;
+  border-color: var(--green-deep);
+  font-weight: 700;
+}
+
+/* CHART CARD */
+.chart-card {
+  margin: 16px 24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 16px 14px;
+  border: 1px solid var(--border);
+}
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.chart-card-title { font-size: 15px; font-weight: 700; }
+.chart-card-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+.chart-current-aqi { text-align: right; }
+.chart-aqi-val { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--green-deep); display: block; line-height: 1; }
+.chart-aqi-lbl { font-size: 10px; color: var(--text-muted); }
+
+#aqi-chart { display: block; width: 100%; height: 140px; }
+
+.chart-x-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding: 0 2px;
+}
+.chart-x-labels span { font-size: 9px; color: var(--text-muted); }
+
+/* STATS ROW */
+.trends-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 24px;
+}
+.trend-stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px 10px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.tsc-icon { font-size: 18px; margin-bottom: 8px; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+.tsc-val { font-size: 20px; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.tsc-val.good { color: var(--aqi-good); }
+.tsc-val.moderate { color: var(--aqi-sensitive); }
+.tsc-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; font-weight: 600; }
+.tsc-time { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+/* POLLUTANT TRENDS */
+.pollutant-trends { padding: 0 24px; display: flex; flex-direction: column; gap: 10px; }
+.pt-row {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pt-name { font-size: 13px; font-weight: 700; width: 40px; flex-shrink: 0; }
+.pt-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.pt-bar-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.pt-value { font-size: 12px; font-weight: 700; width: 42px; text-align: right; flex-shrink: 0; color: var(--text-primary); }
+.pt-unit { font-size: 10px; color: var(--text-muted); width: 32px; flex-shrink: 0; }
+
+/* DAILY SUMMARY */
+.daily-summary { padding: 0 24px; display: flex; flex-direction: column; gap: 8px; }
+.day-row {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.day-name { font-size: 13px; font-weight: 600; width: 36px; flex-shrink: 0; }
+.day-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.day-bar-fill { height: 100%; border-radius: 4px; }
+.day-aqi { font-size: 13px; font-weight: 800; width: 32px; text-align: right; flex-shrink: 0; }
+.day-status { font-size: 10px; width: 58px; text-align: right; flex-shrink: 0; color: var(--text-muted); }
+
+/* HEALTH TIP */
+.health-tip-card {
+  margin: 16px 24px;
+  background: var(--green-mist);
+  border: 1px solid var(--green-pale);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.health-tip-top {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 8px; font-size: 14px;
+}
+.health-tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
 .settings-logout {
   margin: 0 24px;
   padding: 16px;
@@ -782,3 +1054,137 @@ html, body {
   font-weight: 600;
 }
 .settings-logout svg { width: 18px; height: 18px; stroke: #c0392b; }
+
+/* ===================== TRENDS SCREEN ===================== */
+.trends-header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trends-header h1 { font-family: 'DM Serif Display', serif; font-size: 26px; }
+.trends-location {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-secondary);
+}
+.trends-location svg { width: 13px; height: 13px; stroke: var(--green-accent); }
+
+.period-tabs {
+  display: flex; gap: 8px;
+  padding: 16px 24px 0;
+}
+.period-tab {
+  flex: 1; text-align: center;
+  padding: 9px 0; border-radius: 20px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.period-tab.active {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: white;
+}
+
+.chart-card {
+  margin: 16px 24px 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 16px 14px;
+  border: 1px solid var(--border);
+}
+.chart-card-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 16px;
+}
+.chart-card-title { font-size: 14px; font-weight: 700; }
+.chart-card-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.chart-current-aqi { display: flex; flex-direction: column; align-items: flex-end; }
+.chart-aqi-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; color: var(--green-deep); line-height: 1;
+}
+.chart-aqi-lbl { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+#aqi-chart { display: block; width: 100%; }
+.chart-x-labels {
+  display: flex; justify-content: space-between;
+  margin-top: 6px; padding: 0 2px;
+}
+.chart-x-labels span { font-size: 9px; color: var(--text-muted); }
+
+.trends-stats-row {
+  display: flex; gap: 10px;
+  padding: 16px 24px 0;
+}
+.trend-stat-card {
+  flex: 1; background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 14px 10px; text-align: center;
+}
+.tsc-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; margin: 0 auto 8px;
+}
+.tsc-val { font-size: 20px; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.tsc-val.good { color: var(--aqi-good); }
+.tsc-val.warn { color: var(--aqi-orange, #f77f00); }
+.tsc-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; font-weight: 600; }
+.tsc-time { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+.pollutant-trends {
+  padding: 0 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pt-row {
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 12px 14px; border: 1px solid var(--border);
+}
+.pt-top {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 8px;
+}
+.pt-name { font-size: 13px; font-weight: 600; }
+.pt-right { display: flex; align-items: baseline; gap: 2px; }
+.pt-value { font-size: 13px; font-weight: 700; }
+.pt-unit { font-size: 10px; color: var(--text-muted); }
+.pt-bar-bg { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.pt-bar-fill { height: 100%; border-radius: 3px; transition: width 0.9s ease; }
+.pt-status { font-size: 10px; color: var(--text-muted); margin-top: 5px; }
+
+.daily-summary {
+  padding: 0 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.day-row {
+  background: var(--white); border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.day-name { font-size: 13px; font-weight: 600; width: 36px; flex-shrink: 0; }
+.day-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.day-bar-fill { height: 100%; border-radius: 4px; }
+.day-aqi { font-size: 13px; font-weight: 700; width: 32px; text-align: right; flex-shrink: 0; }
+.day-badge {
+  font-size: 9px; font-weight: 700;
+  padding: 3px 7px; border-radius: 10px;
+  width: 62px; text-align: center; flex-shrink: 0;
+}
+
+.health-tip-card {
+  margin: 16px 24px;
+  background: var(--green-mist);
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1px solid var(--green-pale);
+}
+.health-tip-top {
+  display: flex; align-items: center;
+  gap: 8px; margin-bottom: 8px; font-size: 14px;
+}
+.health-tip-top strong { color: var(--green-deep); }
+.health-tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
