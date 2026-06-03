@@ -68,7 +68,7 @@
         <div class="chart-box">
             <h3>Temporal AQI Analysis</h3>
             <div class="chart-placeholder">
-                Chart Area
+                
             </div>
         </div>
 
@@ -76,8 +76,13 @@
 
             <div class="map-box">
                 <h3>48 Areas in Pangasinan</h3>
-                <div class="map-placeholder">Map</div>
+                <div class="map-placeholder">
+                
+                <img src="pangasinan_map.png" alt="pangasinan map" id="pang_map">
+
+                </div>
             </div>
+
 
             <div class="actions">
                 <button class="green">Download AQI Summary</button>

@@ -47,12 +47,12 @@ $pollutant_data_exist=$pollutant_data->fetchALL(PDO::FETCH_ASSOC);
                 </th>  
                 <th>AQI</th>  
                 <th>Status</th>  
-                <th>SO2</th>  
+                <th>So2</th>  
                 <th>O3</th>  
-                <th>CO</th>  
-                <th>NO2</th>  
-                <th>NOX</th>  
-                <th>NO</th>  
+                <th>Co</th>  
+                <th>No2</th>  
+                <th>NoX</th>  
+                <th>No</th>  
                 
 
                </thead>
@@ -97,7 +97,7 @@ data.forEach(row => {
                     <td>${row.date || 'N/A'}</td>
                     <td>${loc_dropdown.options[loc_dropdown.selectedIndex].text}</td>
                     <td>${row.aqi || 0.0}</td>
-                    <td class="${(row.status || 'good').toLowerCase()}">${row.status || 'Good'}</td>
+                    <td class="${((row.status).replace(/\s+/g,'-') || 'good').toLowerCase()}">${row.status || 'Good'}</td>
                     <td>${row.so2 || 0.0}</td>
                     <td>${row.o3 || 0.0}</td>
                     <td>${(row.co) || 0.0}</td>

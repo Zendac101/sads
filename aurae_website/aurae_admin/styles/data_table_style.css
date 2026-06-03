@@ -58,6 +58,10 @@ html {
     font-weight: bold;
 }
 
+.unhealthy-for-sensitive-groups {
+    color: rgb(189, 18, 18);
+    font-weight: bold;
+}
 
 thead th {
     position: sticky;

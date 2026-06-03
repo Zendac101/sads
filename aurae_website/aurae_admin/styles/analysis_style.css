@@ -148,11 +148,12 @@ body {
     justify-content: center;
     margin-top: 10px;
     border-radius: 10px;
+    height: 20%;
 }
 
 .bottom-section {
     display: flex;
-    gap: 20px;
+    gap: 150px;
 }
 
 .map-box {
@@ -160,23 +161,29 @@ body {
     background: #AFCBBA;
     padding: 20px;
     border-radius: 12px;
+    height: 330px;
+
 }
 
 .map-placeholder {
-    height: 160px;
-    background: rgba(255, 255, 255, 0.3);
+    height: 90%;
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
     border-radius: 10px;
+
 }
+
 
 .actions {
     flex: 1;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
 button {
@@ -193,4 +200,10 @@ button {
 
 .light {
     background: #e5e7eb;
+}
+
+#pang_map {
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
 }
