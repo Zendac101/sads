@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
-<link rel="stylesheet" href="styles/global.css">
-<link rel="stylesheet" href="styles/reports_style.css">
-
+<link rel="stylesheet" href="..\assets\css\global.css">
+<link rel="stylesheet" href="..\assets\css\support_style.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -18,17 +17,17 @@
 
     <aside class="sidebar">
         <div class="logo">
-            <img src="logo_aurae.png" class="logo-img">
-            <h2>Aurae Admin</h2>
+            <img src="..\assets\images\logo_aurae.png" class="logo-img">
+            <h2>Aurae Admin</h2>            
         </div>
 
         <ul class="menu">
             <li><a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a></li>
             <li><a href="data_management.php"><i class="fas fa-database"></i> Data Management</a></li>
             <li><a href="analysis.php"><i class="fas fa-chart-line"></i> Analysis</a></li>
-            <li class="active"><a href="reports.php"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li><a href="reports.php"><i class="fas fa-file-alt"></i> Reports</a></li>
             <li><a href="settings.php"><i class="fas fa-cog"></i> Settings</a></li>
-            <li><a href="support.php"><i class="fas fa-life-ring"></i> Support / Help</a></li>
+            <li class="active"><a href="support.php"><i class="fas fa-life-ring"></i> Support / Help</a></li>
         </ul>
     </aside>
 
@@ -37,7 +36,7 @@
         <div class="topbar">
 
             <button id="toggleSidebar" class="menu-btn">
-                <i class="fas fa-bars" ></i>
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="search-box">
@@ -62,24 +61,28 @@
 
         <div class="header">
             <div class="header-left">
-                <h1>Reports</h1>
-                <p>Organize reports for better understanding.</p>
+                <h1>Support / Help</h1>
+                <p>Guidance when you need it most.</p>
             </div>
         </div>
 
-        <div class="reports-box">
+        <div class="support-container">
 
-            <div class="report-card">March 22 - 28, 2026</div>
-            <div class="report-card">March 29 - April 04, 2026</div>
-            <div class="report-card">April 05 - 11, 2026</div>
-            <div class="report-card">April 12 - 19, 2026</div>
+            <div class="support-card">
+                <i class="fas fa-comments"></i>
+                <span>FAQs</span>
+            </div>
 
-        </div>
+            <div class="support-card">
+                <i class="fas fa-microchip"></i>
+                <span>Technical Support</span>
+            </div>
 
-        <div class="table-actions">
-            <button class="green">Upload CSV</button>
-            <button class="light">Replace Data</button>
-            <button class="light">Delete Data</button>
+            <div class="support-card">
+                <i class="fas fa-file-alt"></i>
+                <span>System Documentation</span>
+            </div>
+
         </div>
 
     </main>

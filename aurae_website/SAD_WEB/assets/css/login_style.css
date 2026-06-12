@@ -24,7 +24,7 @@ body::before {
     width: 100%;
     height: 100%;
 
-    background-image: url("aurae_pic.png");
+    background-image: url("../images/aurae_pic.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,6 +100,7 @@ input {
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
+
 }
 
 button {
@@ -115,6 +116,14 @@ button:first-of-type {
     background: black;
     color: white;
 }
+
+button:hover {
+    background: #3e433d;
+}
+
+
+
+
 
 .google {
     display: flex;
@@ -144,5 +153,3 @@ button:first-of-type {
     font-weight: 600;
     color: #000;
 }
-
-#error_email {}

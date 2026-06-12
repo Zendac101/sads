@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
-<link rel="stylesheet" href="styles/settings_style.css">
-<link rel="stylesheet" href="styles/global.css">
+<link rel="stylesheet" href="..\assets\css\settings_style.css">
+<link rel="stylesheet" href="..\assets\css\global.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -17,7 +17,7 @@
 
     <aside class="sidebar">
         <div class="logo">
-            <img src="logo_aurae.png" class="logo-img">
+            <img src="..\assets\images\logo_aurae.png" class="logo-img">
             <h2>Aurae Admin</h2>
         </div>
 

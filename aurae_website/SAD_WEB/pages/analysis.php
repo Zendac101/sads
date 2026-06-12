@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurae Admin</title>
 
-<link rel="stylesheet" href="styles/global.css">
-<link rel="stylesheet" href="styles/analysis_style.css">
+<link rel="stylesheet" href="..\assets\css\global.css">
+<link rel="stylesheet" href="..\assets\css\analysis_style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -16,7 +16,7 @@
 
     <aside class="sidebar">
         <div class="logo">
-            <img src="logo_aurae.png" class="logo-img">
+            <img src="..\assets\images\logo_aurae.png" class="logo-img">
             <h2>Aurae Admin</h2>
         </div>
 
@@ -78,7 +78,7 @@
                 <h3>48 Areas in Pangasinan</h3>
                 <div class="map-placeholder">
                 
-                <img src="pangasinan_map.png" alt="pangasinan map" id="pang_map">
+                <img src="..\assets\images\pangasinan_map.png" alt="pangasinan map" id="pang_map">
 
                 </div>
             </div>

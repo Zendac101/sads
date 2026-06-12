@@ -23,17 +23,17 @@ if (isset($_GET['error'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurae Admin</title>
-    <link rel="preload" as="image" href="aurae_pic.png">
-    <link rel="stylesheet" href="sign_in_style.css">
+    <link rel="preload" as="image" href="..\assets\images\aurae_pic.png">
+    <link rel="stylesheet" href="..\assets\css\sign_in_style.css">
 </head>
 
 
 <body>
 
-    <form class="card" method="POST" action="connection/user_reg.php">
+    <form class="card" method="POST" action="..\config\user_reg.php">
 
         <div class="logo">
-            <img src="logo_aurae.png">
+            <img src="..\assets\images\logo_aurae.png">
         </div>
 
         <h2>Aurae Sign Up</h2>

@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['role'] = 'admin';
                 $_SESSION['username'] = $admin_exist['username'];
                 
-                header("Location: ../aurae_admin/dashboard.php");
+                header("Location: ../pages/dashboard.php");
                 exit();
             } else {
-               header("Location: ../login.php?error=password&username=" . urlencode($input_email));
+               header("Location: ../index.php?error=password&username=" . urlencode($input_email));
             }
         } else {
             // check id user
@@ -36,14 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['role'] = 'user';
                     $_SESSION['username'] = $user_exist['username'];
                     
-                    header("Location: ../aurae_admin/dashboard.php");
+                    header("Location: ../pages/dashboard.php");
                     exit();
                 } else {
-                   header("Location: ../login.php?error=password&username=" . urlencode($input_email));
+                   header("Location: ../index.php?error=password&username=" . urlencode($input_email));
                 }
             } else {
                 // if username not exist
-                header("Location: ../login.php?error=username");
+                header("Location: ../index.php?error=username");
                 exit();
             }
         }

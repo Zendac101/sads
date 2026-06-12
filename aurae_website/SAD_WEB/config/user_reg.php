@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     if ($admin_exist || $user_exist){
 
 
-       header("Location: ../sign_in.php?error=email_exists");
+       header("Location: ..\pages\sign_in.php?error=email_exists");
         exit();
     
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
                             ":lname" => $lname,               
                             ":email" => $email,               
                             ]);
-            header("Location: ../login.php"); 
+            header("Location: ../index.php"); 
         exit();
         }
         catch(PDOException $e){

@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurae Admin</title>
-    <link rel="preload" as="image" href="aurae_pic.png">
-    <link rel="stylesheet" href="login_style.css">
+    <link rel="preload" as="image" href="assets/images/aurae_pic.png">
+    <link rel="stylesheet" href="assets/css/login_style.css">
 
 
 </head>
@@ -18,13 +18,13 @@
 
 
 
-    <form class="card" method= "POST" action="connection/login_ver.php" >
+    <form class="card" method= "POST" action="config\login_ver.php" >
 
         <div class="logo">
-            <img src="logo_aurae.png">
+            <img src="assets\images\logo_aurae.png">
         </div>
 
-        <h2>Aurae Login</h2>
+        <h2>Aurae Login</h2>    
 
         <p>Enter your email to login for this app</p>
 
@@ -39,7 +39,7 @@
         
         <p class="divider">or continue with</p>
 
-        <button type="button" class="google" onclick="window.location.href='sign_in.php';" >
+        <button type="button" class="google" onclick="window.location.href='pages/sign_in.php';" >
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
             Continue with Google
         </button>
