@@ -11,18 +11,15 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     $password=$_POST['password'];
     $con_password=$_POST['con_password'];
 
-    if ($password !== $con_password) {
-        header("Location: ../sign_in.php?error=password_mismatch");
-        exit();
-    }   
+  
 
 
-    $admin_stmt = $conn->prepare("SELECT * FROM admin_info WHERE email = :username");
-    $admin_stmt->execute(['username' => $email]);
+    $admin_stmt = $conn->prepare("SELECT * FROM admin_info WHERE email = :email");
+    $admin_stmt->execute(['email' => $email]);
     $admin_exist = $admin_stmt->fetch(PDO::FETCH_ASSOC);
 
-    $user_stmt = $conn->prepare("SELECT * FROM user_info WHERE email = :username");
-    $user_stmt->execute(['username' => $email]);
+    $user_stmt = $conn->prepare("SELECT * FROM user_info WHERE email = :email");
+    $user_stmt->execute(['email' => $email]);
     $user_exist = $user_stmt->fetch(PDO::FETCH_ASSOC);
 
     
@@ -30,13 +27,16 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     if ($admin_exist || $user_exist){
 
 
-       header("Location: ..\pages\sign_in.php?error=email_exists");
+       header("Location: ..\index.php?reg_error=email_exists");
         exit();
     
 
     }
 
-
+  if ($password !== $con_password) {
+        header("Location: ../index.php?reg_error=password_mismatch");
+        exit();
+    }   
 
 
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
                             ":lname" => $lname,               
                             ":email" => $email,               
                             ]);
-            header("Location: ../index.php"); 
+            header("Location: ../index.php?state=success"); 
         exit();
         }
         catch(PDOException $e){

@@ -5,6 +5,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.form-box {
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
 body {
     height: 100vh;
     display: flex;

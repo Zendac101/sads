@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../pages/dashboard.php");
                 exit();
             } else {
-               header("Location: ../index.php?error=password&username=" . urlencode($input_email));
+               header("Location: ../index.php?log_error=invalid_password" );
             }
         } else {
             // check id user
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../pages/dashboard.php");
                     exit();
                 } else {
-                   header("Location: ../index.php?error=password&username=" . urlencode($input_email));
+                   header("Location: ../index.php?log_error=invalid_password" );
                 }
             } else {
                 // if username not exist
-                header("Location: ../index.php?error=username");
+                header("Location: ../index.php?log_error=invalid_email");
                 exit();
             }
         }
