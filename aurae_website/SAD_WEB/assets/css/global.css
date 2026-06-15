@@ -10,6 +10,11 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.menu li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
 .menu li a {
     display: flex;
     align-items: center;
@@ -60,26 +65,7 @@
     font-size: 14px;
 }
 
-.menu-btn {
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 12px;
-    background: #AFCBBA;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s ease;
-}
 
-.menu-btn:hover {
-    transform: scale(1.05);
-}
-
-.topbar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
 
 .sidebar {
     transition: 0.3s ease;
@@ -101,4 +87,88 @@
 
 .sidebar.collapsed .menu li a i {
     font-size: 18px;
+}
+
+.active {
+    background-color: #8fbf96;
+
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.logo-img {
+    width: 45px;
+}
+
+
+.menu-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: #AFCBBA;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.topbar {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.email {
+    font-size: 11px;
+    color: gray;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons i {
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
 }
