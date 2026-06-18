@@ -13,7 +13,7 @@
 
 <body>
 
-<div class="container">
+<div id="container" >
 
   <?php include "..\component\sidebar.php"; ?>
 
@@ -29,44 +29,45 @@
 
         <div class="settings-box">
 
-            <div class="setting-item">
-                <span>Account</span>
-                <i class="fas fa-ellipsis-h"></i>
+            <div class="setting-item" id="setting-account">
+                <span>Account</span><br>
+                
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-account')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-system_name">
                 <span>System Name / Logo</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-system_name')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-data_source">
                 <span>Data Source Settings</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-data_source')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-threshold">
                 <span>Air Quality Threshold Rules</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-threshold')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-activity_log">
                 <span>Activity Log</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-activity_log')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-report_format">
                 <span>Report Format Settings</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-report_format')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-backup">
                 <span>Backup & Restore</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-backup')"></button>
             </div>
 
-            <div class="setting-item">
+            <div class="setting-item" id="setting-notification">
                 <span>Email Notification Settings</span>
-                <i class="fas fa-ellipsis-h"></i>
+                <button class="fas fa-ellipsis-h" onclick="expansion('setting-notification')"></button>
             </div>
 
         </div>
@@ -74,14 +75,12 @@
     </main>
 
 </div>
+<script src="..\assets\js\setting_expand.js"></script>
+<script src="..\assets\js\toggle_sidebar.js">
 
-<script>
-document.getElementById("toggleSidebar")
-.addEventListener("click", function () {
-    document.querySelector(".sidebar")
-    .classList.toggle("collapsed");
-});
+
 </script>
+
 
 </body>
 </php>

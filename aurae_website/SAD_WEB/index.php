@@ -8,14 +8,14 @@ if (isset($_GET['reg_error'])) {
     if ($_GET['reg_error'] == "email_exists") {
         $error_message = "Email already exists!";
         $default_form="register_form";
-        ?><style>#reg_email{background-color: #e17e7e;}</style><?php
+        ?><style>.reg_email{background-color: #e17e7e;}</style><?php
     } 
     
     elseif ($_GET['reg_error'] == "password_mismatch") {
         $error_message = "Passwords do not match!";
         $default_form="register_form";
-        ?><style>#reg_password{background-color: #e17e7e;}
-        #con_password{background-color: #e17e7e;}
+        ?><style>.reg_password{background-color: #e17e7e;}
+        .con_password{background-color: #e17e7e;}
         </style><?php
     } }
         
@@ -24,13 +24,13 @@ if(isset($_GET['log_error'])){
     if($_GET['log_error']=="invalid_password"){
         $error_message="Wrong Password";
         $default_form="login_form";
-        ?><style>#log_password{background-color: #e17e7e;}
+        ?><style>.log_password{background-color: #e17e7e;}
         </style><?php
     }
     elseif($_GET['log_error']=="invalid_email"){
         $error_message="Invalid email";
         $default_form="login_form";
-        ?><style>#log_email{background-color: #e17e7e;}
+        ?><style>.log_email{background-color: #e17e7e;}
         </style><?php
     }
 }
@@ -87,9 +87,9 @@ if(isset($_GET['state'])){
             </div>
         <?php endif; ?>
 
-        <input type="text" id="email" name="email" placeholder="username@gmail.com" required>
+        <input type="text" class="log_email" id="email" name="email" placeholder="username@gmail.com" required>
       
-        <input type="password" id="password" name="password" placeholder="password" required>
+        <input type="password" class="log_password" id="password" name="password" placeholder="password" required>
 
        
         <button type="submit" id="login_but">
@@ -145,11 +145,11 @@ if(isset($_GET['state'])){
 
         <input type="text" id="lname" name="lname" placeholder="Last Name" required>
 
-        <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+        <input type="email" class="reg_email" id="email" name="email" placeholder="@gmail.com" required>
 
-        <input type="password" id="password" name="password" placeholder="password" minlength="8" required>
+        <input type="password" class="reg_password" id="password" name="password" placeholder="password" minlength="8" required>
         
-        <input type="password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
+        <input type="password" class="con_password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
 
         <button type="submit" id="submits_btn">
             Sign up 

@@ -1,10 +1,15 @@
+<?php
+require_once("../config/login_ver.php");
+?>
+
+
 <link rel="stylesheet" href="..\assets\css\global.css">
 
 <body>
 
 <div class="topbar">
 
-            <button id="toggleSidebar" class="menu-btn">
+            <button id="toggleSidebar" class="menu-btn" >
                 <i class="fas fa-bars"></i>
             </button>
 
@@ -22,10 +27,10 @@
                 <div class="avatar"></div>
 
                 <div class="user-info">
-                    <span class="name">Jose Batumbakal</span>
-                    <span class="email">josebatumbakal@gmail.com</span>
+                    <span class="name"><?php echo $_SESSION['username']; ?></span>
+                    <span class="email"><?php echo $_SESSION['email']; ?></span>
                 </div>
             </div>
         </div>
-
+<script src="..\assets\js\sidebar.js"></script>
 </body>

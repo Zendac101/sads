@@ -14,7 +14,7 @@
 
 <body>
 
-<div class="container">
+<div id="container">
 
      <?php include "..\component\sidebar.php"; ?>
 
@@ -111,13 +111,10 @@
 
 </div>
 
-<script>
-document.getElementById("toggleSidebar")
-.addEventListener("click", function () {
-    document.querySelector(".sidebar")
-    .classList.toggle("collapsed");
-});
+<script src="..\assets\js\toggle_sidebar.js">
+
 </script>
+
 
 </body>
 </php>

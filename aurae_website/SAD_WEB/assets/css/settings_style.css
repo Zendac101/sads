@@ -7,14 +7,24 @@
 
 body {
     background: #f3f4f6;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-.container {
+
+
+#container {
     display: flex;
     height: 100vh;
+    padding-left: 240px;
+    transition: all 0.3s ease;
 }
 
-
+#container.expand {
+    padding-left: 90px;
+}
 
 .main {
     flex: 1;
@@ -43,11 +53,20 @@ body {
 }
 
 .setting-item {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     padding: 16px 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+
+}
+
+.setting-item button {
+    position: relative;
+
+    background-color: #AFCBBA;
+    border: none;
+    color: #5d6a62;
 }
 
 .setting-item:last-child {
@@ -60,4 +79,9 @@ body {
 
 .setting-item i {
     color: gray;
+}
+
+.expand {
+    height: 100px;
+
 }
