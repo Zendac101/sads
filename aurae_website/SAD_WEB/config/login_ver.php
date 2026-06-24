@@ -19,6 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email']=$admin_exist['email'];
                 $_SESSION['role'] = 'admin';
                 $_SESSION['username'] = $admin_exist['username'];
+                $_SESSION['fname'] = $admin_exist['first_name'];
+                $_SESSION['lname'] = $admin_exist['last_name'];
+                $_SESSION['created'] = $admin_exist['date_created'];
+                
                 
                 header("Location: ../pages/dashboard.php");
                 exit();
@@ -37,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['email']=$user_exist['email'];
                     $_SESSION['role'] = 'user';
                     $_SESSION['username'] = $user_exist['username'];
+                    $_SESSION['fname'] = $user_exist['first_name'];
+                $_SESSION['lname'] = $user_exist['last_name'];
+                $_SESSION['created'] = $user_exist['date_created'];
                     
                     header("Location: ../pages/dashboard.php");
                     exit();

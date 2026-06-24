@@ -47,27 +47,44 @@ body {
     font-size: 14px;
 }
 
-.chart-box {
+#chart-box {
+    height: 25%;
     background: #AFCBBA;
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
 }
 
+#chart-box.expanded {
+    height: 50%;
+}
+
 .chart-placeholder {
-    height: 250px;
+
     background: rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
     border-radius: 10px;
-    height: 20%;
+    height: 80%;
+}
+
+#chart_top {
+    display: flex;
+    justify-content: space-between
+}
+
+#location {
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.475);
 }
 
 .bottom-section {
+    height: 55%;
     display: flex;
-    gap: 150px;
+    gap: 10px;
 }
 
 .map-box {
@@ -75,7 +92,7 @@ body {
     background: #AFCBBA;
     padding: 20px;
     border-radius: 12px;
-    height: 330px;
+    height: 100%;
 
 }
 

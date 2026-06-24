@@ -1,3 +1,13 @@
-function expansion(but_id) {
-    document.getElementById(but_id).classList.toggle("expand");
-}
+const acc_overlay = document.getElementById("account_overlay");
+
+
+document.getElementById("edit_account").addEventListener('click', function () {
+
+    acc_overlay.showModal();
+
+})
+document.getElementById("close_but").addEventListener('click', function () {
+
+    acc_overlay.close();
+
+})

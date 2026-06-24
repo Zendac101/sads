@@ -30,43 +30,80 @@
         <div class="settings-box">
 
             <div class="setting-item" id="setting-account">
-                <span>Account</span><br>
+                <div>
+                    <h5><span>Account</span></h5><br>
+                     <h6>Username:<span class="profile"> <?php echo ucfirst($_SESSION['username']); ?></span></h6><br>
+                      <h6>Full Name:<span class="profile"> <?php echo ucfirst($_SESSION['fname']. ' '. $_SESSION['lname']); ?></span></h6><br>
+                     <h6>Role: <span class="profile"><?php echo ucfirst($_SESSION['role']); ?></span></h6><br>
+                    <h6>Email:<span class="profile"> <?php echo ucfirst($_SESSION['email']); ?></span></h6><br><br>
+
+                    <button id="edit_account">Edit</button><br>
+                
+                    <dialog id="account_overlay">
+                    <h5>edit account</h5>
+                    <button id="close_but">close</button>
+                    </dialog>
+
+                    <button id="change_pass">Change Password</button>
+                </div>
                 
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-account')"></button>
             </div>
 
             <div class="setting-item" id="setting-system_name">
-                <span>System Name / Logo</span>
+                <div>
+                    <h5><span>System Name / Logo</span></h5>   
+                </div>
+                
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-system_name')"></button>
             </div>
 
             <div class="setting-item" id="setting-data_source">
-                <span>Data Source Settings</span>
+                <div>
+                    <h5><span>Data Source Settings</span></h5>
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-data_source')"></button>
             </div>
 
             <div class="setting-item" id="setting-threshold">
-                <span>Air Quality Threshold Rules</span>
+                <div>
+                    <h5><span>Air Quality Threshold Rules</span></h5>
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-threshold')"></button>
             </div>
 
             <div class="setting-item" id="setting-activity_log">
-                <span>Activity Log</span>
+                <div>
+                    <h5><span>Activity Log</span></h5>
+                    
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-activity_log')"></button>
             </div>
 
             <div class="setting-item" id="setting-report_format">
-                <span>Report Format Settings</span>
+                <div>
+                    <h5><span>Report Format Settings</span></h5>
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-report_format')"></button>
             </div>
 
             <div class="setting-item" id="setting-backup">
-                <span>Backup & Restore</span>
+                <div>
+                    <h5><span>Backup & Restore</span></h5>
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-backup')"></button>
             </div>
 
             <div class="setting-item" id="setting-notification">
-                <span>Email Notification Settings</span>
+                <div>
+                    <h5><span>Email Notification Settings</span></h5>
+                </div>
+
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-notification')"></button>
             </div>
 

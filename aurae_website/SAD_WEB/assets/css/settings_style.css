@@ -47,22 +47,34 @@ body {
 }
 
 .settings-box {
+
     background: #AFCBBA;
     padding: 20px;
     border-radius: 12px;
+
 }
 
+
+
 .setting-item {
+
+    height: 50px;
+    display: flex;
+
     justify-content: space-between;
     align-items: top;
     padding: 16px 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     overflow: hidden;
+    text-align: left;
 
 }
 
+
 .setting-item button {
+
     position: relative;
+
 
     background-color: #AFCBBA;
     border: none;
@@ -82,6 +94,32 @@ body {
 }
 
 .expand {
-    height: 100px;
 
+    height: fit-content !important;
+
+}
+
+dialog {
+    border: 1px #a6c8b4;
+    background-color: #AFCBBA;
+    margin: auto;
+    position: fixed;
+    width: 20%;
+    height: 80%;
+    padding: 20px;
+}
+
+dialog::backdrop {
+    background-color: rgba(43, 42, 42, 0.6);
+    backdrop-filter: blur(1px);
+}
+
+#account_overlay {
+
+    justify-content: space-between;
+    align-self: center;
+}
+
+span.profile {
+    color: #222724;
 }
