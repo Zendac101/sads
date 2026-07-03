@@ -60,26 +60,3 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.table-actions {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.table-actions button {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.green {
-    background: #7ca982;
-    color: white;
-}
-
-.light {
-    background: #e5e7eb;
-}

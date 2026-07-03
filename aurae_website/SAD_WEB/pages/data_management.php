@@ -37,8 +37,8 @@
         </div>
 
         <div class="table-actions">
-            <button class="green">Upload CSV</button>
-            <button class="light">Replace Data</button>
+            <button class="green">Upload Data</button>
+            <button class="light">Download Data</button>
             <button class="light">Delete Data</button>
         </div>
 

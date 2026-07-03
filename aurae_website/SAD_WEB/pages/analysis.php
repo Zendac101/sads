@@ -3,22 +3,44 @@
 require_once("..\config\conn.php");
 
 
+//get all location name anmd id
 $loc_stmt=$conn->query("SELECT site_name, site_id FROM location ORDER BY site_name ASC");
 $loc_exist=$loc_stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET["Loc_id"])){
     $selected_ids=$_GET["Loc_id"];
-$pollutant_data=$conn->query("SELECT * FROM pollutant_values WHERE site_id=$selected_ids");
-$pollutant_data_exist=$pollutant_data->fetchALL(PDO::FETCH_ASSOC);
+    $min_date_range = !empty($_GET['min']) ? $_GET['min'] : '2000-01-01';
+    $max_date_range = !empty($_GET['max']) ? $_GET['max'] : '2030-01-01';
+    $pollutant_value=$_GET['pollutants'];
 
-$labels = array_column($pollutant_data_exist, 'date');
-$values = array_column($pollutant_data_exist, 'aqi');
 
-echo json_encode([
-        'labels' => $labels,
-        'values' => $values
+    //swap if minimum is larger than max
+    if ($min_date_range>$max_date_range){
+    [$min_date_range,$max_date_range]=[$max_date_range,$min_date_range];
+    }
+
+
+$stmt = $conn->prepare("SELECT * FROM pollutant_values WHERE site_id = ? AND date >= ? AND date <= ?");
+$stmt->execute([$selected_ids, $min_date_range, $max_date_range]);
+$pollutant_data_exist=$stmt->fetchALL(PDO::FETCH_ASSOC);
+
+$labels = array_reverse(array_column($pollutant_data_exist, 'date'));
+$values = array_reverse(array_column($pollutant_data_exist, $pollutant_value));
+
+
+//get original date
+$ori_date = $conn->prepare("SELECT MIN(date) as original_min, MAX(date) as original_max FROM pollutant_values WHERE site_id = ?");
+    $ori_date->execute([$selected_ids]);
+    $ori_date_exist = $ori_date->fetch(PDO::FETCH_ASSOC);
+
+
+    echo json_encode([ 
+        'pollutant_name'=>strtoupper($pollutant_value),
+        'max_date' => $ori_date_exist['original_max'] ?? '2030-01-01',
+        'min_date' => $ori_date_exist['original_min'] ?? '2000-01-01',
+        'labels'   => $labels,
+        'values'   => $values
     ], JSON_NUMERIC_CHECK);
-
     exit;
 
 
@@ -61,18 +83,39 @@ echo json_encode([
         </div>
 
         <div id="chart-box">
-            <div id="chart_top"><h3>Temporal AQI Analysis</h3>
+            <div id="chart_top">
+                <h3>Temporal AQI Analysis</h3>
+       
+                <div>
+<!-- pollutant select -->
+                    <label for="pollutants"><b>Pollutant:</b></label>
+                    <select name="poluttants" id="pollutants" onchange="toPHP(document.getElementById('Location').value)">
+                        <option value="aqi">AQI</option>
+                        <option value="so2">SO2</option>
+                        <option value="co">CO</option>
+                        <option value="o3">O3</option>
+                        <option value="nox">NOX</option>
+                        <option value="no2">NO2</option>
+                        <option value="no">NO</option>
+                    </select>
+
+    
+                <label for="Location"><b>Location: </b></label>
                 <select name="Location" id="Location" onchange="toPHP(value)">
                 <option value="">Select Location</option>
 
                 </select>
+           </div>
             </div>
 
-
+<!-- graoh pollutant level -->
         <div class="chart-placeholder" >
     <canvas id="dbChart"  style="position: relative; width: 100%; height: 100%;"></canvas>
 </div>
-        </div>
+
+
+        </div><br>
+        
 
         <div class="bottom-section">
 
@@ -87,9 +130,19 @@ echo json_encode([
 
 
             <div class="actions">
-                <button class="green">Download AQI Summary</button>
-                <button class="light">Add Data</button>
-                <button class="light">Delete Data</button>
+                <button  id="download_graph">Download Graph</button>
+                <button  id="date_range">Date Range</button>
+                <button  id="reset">Reset</button>
+
+                <dialog id="date_range_dialog">
+                    <input type="date" id="min" >
+                    <input type="date" id="max" >
+
+                    <button id="date_submit" onclick="toPHP(value)">submit</button>
+                </dialog>
+
+
+
             </div>
 
         </div>
@@ -106,7 +159,7 @@ const loc_dropdown=document.getElementById("Location");
 const locs=<?php echo json_encode($loc_exist); ?>;
 
 
-
+//get all location databse
 locs.forEach(location => {
 
     const option= new Option(location.site_name,location.site_id);
@@ -116,6 +169,16 @@ locs.forEach(location => {
 });
 
 
+//date range
+
+document.getElementById('date_range').addEventListener('click', function(){
+    document.getElementById('date_range_dialog').showModal();
+});
+
+
+//reset
+document.getElementById('reset').addEventListener('click',function(){window.location.reload()})
+
 //chart part
 const pathname=window.location.pathname
 let myChartInstance = null;
@@ -124,21 +187,32 @@ document.getElementById("Location").addEventListener('change',function(){
 chart=document.getElementById('chart-box')
 if(chart){
 chart.classList.add("expanded");
+
 }}
 );  
 
-function toPHP(value){
-if(!value) {    
-    return;
-}
 
-  
-console.log("Fetching data for site_id:", value);
+function toPHP(value) {
+    if(!value){console.log('fail')}
+
+    console.log("Fetching data for site_id:", value);
+
+   
+    const minDateInput = document.getElementById('min')?.value || '';
+    const maxDateInput = document.getElementById('max')?.value || '';
+    const pollutant_data=document.getElementById('pollutants').value;
+
+    // url for fetch
+    const url = `${pathname}?Loc_id=${value}&min=${encodeURIComponent(minDateInput)}&max=${encodeURIComponent(maxDateInput)}&pollutants=${pollutant_data}`;
+
+    //fetch
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
 
 
-fetch(pathname+"?Loc_id="+value).then(Response=>Response.json()).then(data=>{
 
-const canvasElement = document.getElementById('dbChart');
+        const canvasElement = document.getElementById('dbChart');
         const ctx = canvasElement.getContext('2d');
         
      
@@ -146,6 +220,8 @@ const canvasElement = document.getElementById('dbChart');
         const existingChart = Chart.getChart(canvasElement); 
         if (existingChart) {
             existingChart.destroy();
+            document.getElementById('min').value="";
+            document.getElementById('max').value="";
         }
         if (myChartInstance) {
             myChartInstance.destroy();
@@ -157,7 +233,7 @@ const canvasElement = document.getElementById('dbChart');
             data: {
                 labels: data.labels,
                 datasets: [{
-                    label: 'AQI Levels',
+                    label: data.pollutant_name + ' Level',
                     data: data.values,
                     borderColor: 'rgb(75, 192, 192)',
                     backgroundColor: 'rgba(75, 192, 192, 0.1)',
@@ -195,6 +271,34 @@ const canvasElement = document.getElementById('dbChart');
                 maintainAspectRatio: false
             }
         });
+
+
+        
+        min_range=document.getElementById('min');
+        max_range=document.getElementById("max");
+
+        
+        min_range.min=data.min_date;
+        min_range.max=data.max_date;
+        max_range.min=data.min_date;
+        max_range.max=data.max_date;
+
+        
+        
+        submit_date=document.getElementById("date_submit");
+        submit_date.value=value;
+
+
+        //close overlay
+        submit_date.addEventListener('click',function(){
+            
+            document.getElementById("date_range_dialog").close();
+        })
+
+
+
+
+
     })
         .catch(err => console.error("Error updates:", err));
 
@@ -203,12 +307,7 @@ const canvasElement = document.getElementById('dbChart');
 
 
 
-
-
 </script>
-
-
-
 
 </body>
 </php>

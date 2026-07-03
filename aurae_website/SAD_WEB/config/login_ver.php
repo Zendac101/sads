@@ -2,6 +2,10 @@
 session_start();
 require_once("conn.php");
 
+
+
+//to database
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_email = trim($_POST['email'] ?? '');
     $input_password = $_POST['password'] ?? '';

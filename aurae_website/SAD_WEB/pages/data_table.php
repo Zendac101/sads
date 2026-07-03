@@ -34,7 +34,7 @@ $pollutant_data_exist=$pollutant_data->fetchALL(PDO::FETCH_ASSOC);
 <body>
 
 
-     <div class="data-table">
+     <div id="data-table">
 
             <table>
                <thead>
@@ -80,6 +80,11 @@ locs.forEach(location => {
 
 
 function toPHP(value){
+document.getElementById("data-table").scrollTo({
+    top:0,
+    behavior:"auto"
+});
+
 if(!value) {
     return;
 }

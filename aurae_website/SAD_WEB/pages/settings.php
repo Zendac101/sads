@@ -31,12 +31,16 @@
 
             <div class="setting-item" id="setting-account">
                 <div>
+
+
                     <h5><span>Account</span></h5><br>
                      <h6>Username:<span class="profile"> <?php echo ucfirst($_SESSION['username']); ?></span></h6><br>
                       <h6>Full Name:<span class="profile"> <?php echo ucfirst($_SESSION['fname']. ' '. $_SESSION['lname']); ?></span></h6><br>
                      <h6>Role: <span class="profile"><?php echo ucfirst($_SESSION['role']); ?></span></h6><br>
                     <h6>Email:<span class="profile"> <?php echo ucfirst($_SESSION['email']); ?></span></h6><br><br>
 
+
+                    
                     <button id="edit_account">Edit</button><br>
                 
                     <dialog id="account_overlay">
@@ -49,6 +53,8 @@
                 
                 <button class="fas fa-ellipsis-h" onclick="expansion('setting-account')"></button>
             </div>
+
+
 
             <div class="setting-item" id="setting-system_name">
                 <div>

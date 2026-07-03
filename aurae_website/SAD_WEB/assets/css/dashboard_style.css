@@ -94,31 +94,57 @@ body {
 .content {
     display: flex;
     gap: 20px;
+    height: 300px;
 }
 
 .chart {
     flex: 3;
-    height: 300px;
+
     background: #AFCBBA;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#top_chart {
+    width: 90%;
+    height: 10%;
+    padding-top: 10px;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#devices {
+    background-color: #AFCBBA;
+    border: none;
+}
+
+
+#bottom_chart {
+
+    width: 90%;
+    height: 90%;
+
 }
 
 .sidepanel {
     flex: 1;
+
 }
 
 .contacts {
     background: #AFCBBA;
     padding: 15px;
     border-radius: 12px;
-    margin-bottom: 15px;
+
 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 30px;
 }
 
 .contact-item {
@@ -151,17 +177,10 @@ body {
     cursor: pointer;
 }
 
-
 .green {
-    background: #7ca982;
-    color: white;
+    background-color: rgb(122, 216, 155);
 }
 
 .light {
-    background: #e5e7eb;
-}
-
-.full {
-    width: 100%;
-    margin-bottom: 10px;
+    background-color: #ccc;
 }

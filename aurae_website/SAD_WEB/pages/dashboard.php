@@ -29,8 +29,8 @@
             </div>
 
         <div class="header-right">
-                <button class="green">+ Add Projects</button>
-                <button class="light">Import Data</button>
+                <button class="green"><b>+ Add Device</b> </button>
+                <button class="light"><b>Device Status</b> </button>
         </div>
 
         </div>
@@ -55,9 +55,20 @@
         <div class="content">
 
             <div class="chart">
-                <canvas id="aqiChart">
-                    
-                </canvas>
+                
+                    <div id="top_chart">
+                     <div>
+                        <b>Device Monitioring</b>
+                    </div>   
+                    <select name="devices" id="devices">
+                        <option value=""></option>
+                    </select>
+                    </div>
+
+                    <div id="bottom_chart">
+
+                    </div>
+
             </div>
 
             <div class="sidepanel">
@@ -97,13 +108,7 @@
                         </div>
                     </div>
 
-                </div >
-
-                <button class="green full">Insert Data</button>
-                <button class="light full">View Data</button>
-                <button class="light full">Delete Data</button>
-
-            </div>
+              
 
         </div>
 

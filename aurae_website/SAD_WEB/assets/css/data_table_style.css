@@ -1,4 +1,4 @@
-.data-table {
+#data-table {
 
     max-height: 400px;
 
@@ -7,14 +7,17 @@
     border-radius: 5px;
     overflow-y: auto;
 
+
 }
 
 
 
 table {
+
     width: 97%;
     border-collapse: separate;
     border-spacing: 0;
+
 
 }
 
@@ -34,6 +37,7 @@ td {
 th {
     text-align: center;
     font-weight: 600;
+
 }
 
 tr:nth-child(even) {
@@ -46,6 +50,8 @@ html {
 
 
     scrollbar-width: thin;
+
+
 }
 
 .good {

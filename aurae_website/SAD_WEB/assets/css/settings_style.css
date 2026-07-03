@@ -120,6 +120,6 @@ dialog::backdrop {
     align-self: center;
 }
 
-span.profile {
+.profile {
     color: #222724;
 }
