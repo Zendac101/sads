@@ -8,7 +8,7 @@ $loc_stmt=$conn->query("SELECT site_name, site_id FROM location ORDER BY site_na
 $loc_exist=$loc_stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET["Loc_id"])){
-    $selected_ids=$_GET["Loc_id"];
+    $selected_ids=!empty($_GET["Loc_id"]) ? $_GET['Loc_id'] : '0';
     $min_date_range = !empty($_GET['min']) ? $_GET['min'] : '2000-01-01';
     $max_date_range = !empty($_GET['max']) ? $_GET['max'] : '2030-01-01';
     $pollutant_value=$_GET['pollutants'];
@@ -102,7 +102,7 @@ $ori_date = $conn->prepare("SELECT MIN(date) as original_min, MAX(date) as origi
     
                 <label for="Location"><b>Location: </b></label>
                 <select name="Location" id="Location" onchange="toPHP(value)">
-                <option value="">Select Location</option>
+                <option value="0">Select Location</option>
 
                 </select>
            </div>
@@ -176,6 +176,38 @@ document.getElementById('date_range').addEventListener('click', function(){
 });
 
 
+//download chart
+
+document.getElementById('download_graph').addEventListener('click', function() {
+
+const minDateInput = document.getElementById('min')?.value || '';
+    const maxDateInput = document.getElementById('max')?.value || '';
+    const pollutant_data=document.getElementById('pollutants').value;
+    
+    const selectElement = document.getElementById("Location");
+const selectedLoc = selectElement.options[selectElement.selectedIndex].text;
+
+
+    const canvas = document.getElementById('dbChart');
+    
+
+    const imageURI = canvas.toDataURL('image/png');
+    
+   
+    const link = document.createElement('a');
+    file_name="temporal-" + pollutant_data + "-" + selectedLoc + "-" + minDateInput + "/" + maxDateInput;
+    link.download = file_name; // file name
+    link.href = imageURI;
+    
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
+
+
+
 //reset
 document.getElementById('reset').addEventListener('click',function(){window.location.reload()})
 
@@ -193,6 +225,9 @@ chart.classList.add("expanded");
 
 
 function toPHP(value) {
+
+
+
     if(!value){console.log('fail')}
 
     console.log("Fetching data for site_id:", value);
@@ -201,6 +236,14 @@ function toPHP(value) {
     const minDateInput = document.getElementById('min')?.value || '';
     const maxDateInput = document.getElementById('max')?.value || '';
     const pollutant_data=document.getElementById('pollutants').value;
+
+
+
+
+
+
+
+
 
     // url for fetch
     const url = `${pathname}?Loc_id=${value}&min=${encodeURIComponent(minDateInput)}&max=${encodeURIComponent(maxDateInput)}&pollutants=${pollutant_data}`;
@@ -220,8 +263,7 @@ function toPHP(value) {
         const existingChart = Chart.getChart(canvasElement); 
         if (existingChart) {
             existingChart.destroy();
-            document.getElementById('min').value="";
-            document.getElementById('max').value="";
+             
         }
         if (myChartInstance) {
             myChartInstance.destroy();
@@ -299,11 +341,16 @@ function toPHP(value) {
 
 
 
+
+
+
+
     })
         .catch(err => console.error("Error updates:", err));
 
 
 };
+
 
 
 

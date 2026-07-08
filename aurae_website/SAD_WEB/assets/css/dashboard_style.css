@@ -85,10 +85,11 @@ body {
 }
 
 .card {
+
     flex: 1;
     background: #AFCBBA;
     padding: 20px;
-    border-radius: 12px;
+
 }
 
 .content {
