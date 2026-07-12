@@ -11,3 +11,9 @@ document.getElementById("close_but").addEventListener('click', function () {
     acc_overlay.close();
 
 })
+
+
+function expansion(but_id, content) {
+    document.getElementById(but_id).classList.toggle("expand");
+    document.getElementById(content).classList.toggle("show");
+}

@@ -195,14 +195,19 @@ const selectedLoc = selectElement.options[selectElement.selectedIndex].text;
     
    
     const link = document.createElement('a');
+
     file_name="temporal-" + pollutant_data + "-" + selectedLoc + "-" + minDateInput + "/" + maxDateInput;
     link.download = file_name; // file name
     link.href = imageURI;
     
-
+　if ((myChartInstance==null) || (selectElement.value==0)){
+    console.log("No location value detected")
+    return
+}else{
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
 });
 
 

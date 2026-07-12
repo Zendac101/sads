@@ -55,13 +55,11 @@ body {
 }
 
 
-
 .setting-item {
 
     height: 50px;
     display: flex;
 
-    justify-content: space-between;
     align-items: top;
     padding: 16px 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -73,13 +71,18 @@ body {
 
 .setting-item button {
 
-    position: relative;
+    position: fixed;
 
 
     background-color: #AFCBBA;
     border: none;
     color: #5d6a62;
 }
+
+.fas {
+    left: 95%;
+}
+
 
 .setting-item:last-child {
     border-bottom: none;
@@ -93,11 +96,22 @@ body {
     color: gray;
 }
 
+.content_hidden {
+    display: none;
+}
+
+.content_hidden.show {
+    display: block;
+}
+
 .expand {
 
     height: fit-content !important;
 
 }
+
+
+
 
 dialog {
     border: 1px #a6c8b4;

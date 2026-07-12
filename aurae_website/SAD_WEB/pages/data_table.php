@@ -69,7 +69,7 @@ const loc_dropdown=document.getElementById("Location");
 const locs=<?php echo json_encode($loc_exist); ?>;
 
 
-
+//add all location and site id
 locs.forEach(location => {
 
     const option= new Option(location.site_name,location.site_id);
@@ -91,6 +91,9 @@ if(!value) {
     const site_id=""
     const pathname=window.location.pathname
 
+
+
+//fetch all the columns in database
 fetch(pathname+"?Loc_id="+value).then(Response=>Response.json()).then(data=>{
 const tbody=document.getElementById("table_pollutant");
 tbody.innerHTML = "";
