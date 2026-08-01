@@ -10,6 +10,8 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
+
+
 </head>
 
 <body>
@@ -66,7 +68,10 @@
                     </div>
 
                     <div id="bottom_chart">
-
+                        <h5>Humidity: </h5>
+                        <p id="humid_data"></p><br>
+                        <h5>Temprature: </h5>
+                        <p id="temp_data"></p>
                     </div>
 
             </div>
@@ -115,10 +120,15 @@
     </main>
 
 </div>
-
+.
 <script src="..\assets\js\toggle_sidebar.js">
 
 </script>
+
+
+
+<script type="module" src="../assets/js/firebase_database.js"></script>
+
 
 
 </body>

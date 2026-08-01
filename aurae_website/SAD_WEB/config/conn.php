@@ -11,6 +11,6 @@ try{
   
 }
 catch(PDOException $e){
-    die("database con failed: ").$e->getMessage();
+    die("Database Connection Failed: ").$e->getMessage();
 }
 

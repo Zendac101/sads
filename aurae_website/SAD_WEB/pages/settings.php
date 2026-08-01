@@ -56,17 +56,7 @@
 
 
 
-            <div class="setting-item" id="setting-system_name">
-                <div>
-                    <h5><span>System Name / Logo</span></h5>
-                    <div class="content_hidden" id="">
-
-                    </div>   
-                </div>
-                
-                <button class="fas fa-ellipsis-h" onclick="expansion('setting-system_name')"></button>
-            </div>
-
+            
             <div class="setting-item" id="setting-data_source">
                 <div>
                     <h5><span>Data Source Settings</span></h5>
