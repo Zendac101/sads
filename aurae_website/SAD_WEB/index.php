@@ -1,8 +1,12 @@
 <?php 
 
 // Check if an error message was passed back in the URL
-$default_form="login_form";
-$error_message = "";
+$default_form = 'login_form';
+$error_message = ""; 
+
+
+
+
 if (isset($_GET['reg_error'])) {
     
     if ($_GET['reg_error'] == "email_exists") {
@@ -16,6 +20,13 @@ if (isset($_GET['reg_error'])) {
         $default_form="register_form";
         ?><style>.reg_password{background-color: #e17e7e;}
         .con_password{background-color: #e17e7e;}
+        </style><?php
+    } 
+
+    elseif ($_GET['reg_error'] == "verification_failed") {
+        $error_message = "Email verification failed";
+        $default_form="register_form";
+        ?><style>.reg_email{background-color: #e17e7e;}
         </style><?php
     } }
         
@@ -69,7 +80,7 @@ if(isset($_GET['state'])){
 
 
 <div class="form-box <?php echo ($default_form === 'login_form') ? 'active' : ''; ?>"  id="login_form">
-    <form class="card" method= "POST" action="config\login_ver.php" >
+    <form class="card" id="logIn_form" method= "POST" action="config\login_ver.php" >
 
         <div class="logo">
             <img src="assets\images\logo_aurae.png">
@@ -98,7 +109,11 @@ if(isset($_GET['state'])){
         
         <p class="divider">or continue with</p>
 
-        <button type="button" class="google" onclick="showForm('register_form')" >
+          <button type="button" class="google" id="google_btn">
+            Google
+        </button>
+
+        <button type="button"  onclick="showForm('register_form')" >
             
             Sign up
         </button>
@@ -114,7 +129,7 @@ if(isset($_GET['state'])){
 
 <div class="form-box <?php echo ($default_form === 'register_form') ? 'active' : ''; ?>" id="register_form">
 
-<form class="card" method="POST" action="config\user_reg.php">
+<form class="card" id="signUp_form" method="" action="config\user_reg.php">
 
         <div class="logo">
             <img src="assets\images\logo_aurae.png">
@@ -145,19 +160,21 @@ if(isset($_GET['state'])){
 
         <input type="text" id="lname" name="lname" placeholder="Last Name" required>
 
-        <input type="email" class="reg_email" id="email" name="email" placeholder="@gmail.com" required>
+        <input type="email" class="reg_email" id="signUp_email" name="email" placeholder="@gmail.com" required> <button type="button" id="but_verify"><h6>Verify</h6></button>
 
-        <input type="password" class="reg_password" id="password" name="password" placeholder="password" minlength="8" required>
+        <input type="password" class="reg_password" id="signUp_password" name="password" placeholder="password" minlength="8" required>
         
         <input type="password" class="con_password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
 
-        <button type="submit" id="submits_btn">
+        <button type="button" id="submits_btn" >
             Sign up 
         </button>
 
-        <button type="button" id="submits_btn" onclick="showForm('login_form')">
+        <button type="button" onclick="showForm('login_form')">
             Login
         </button>
+
+      
 
 
 
@@ -173,7 +190,10 @@ if(isset($_GET['state'])){
 
 </div>
 
-<script src="assets\js\login_register.js"></script>
+
+
+<script src="assets\js\form_change.js"></script>
+<script type="module" src="assets\js\email_auth.js"></script>
 
 </body>
 

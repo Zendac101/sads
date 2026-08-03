@@ -118,30 +118,28 @@ button {
     border: none;
     margin-bottom: 10px;
     cursor: pointer;
-}
-
-button:first-of-type {
     background: black;
     color: white;
 }
+
+
 
 button:hover {
     background: #3e433d;
 }
 
-
-
-
-
-.google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    background: white;
-    border: 1px solid #ccc;
+#signUp_email {
+    width: 80%;
 }
+
+#but_verify {
+    width: 17%;
+    align-content: center;
+
+}
+
+
+
 
 .google img {
     width: 18px;
