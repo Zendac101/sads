@@ -15,7 +15,14 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     $con_password=$_POST['con_password'];
 
   
+// Read the JS file content
+$jsContent = file_get_contents('email_auth.js');
 
+// Match: const myVar = "value"; or var myVar = 'value';
+if (preg_match('/(?:let|let|var)\s+verified_email\s*=\s*(true|false);/i', $jsContent, $matches)) {
+    $verif = $matches[1];
+   
+}
 
     $admin_stmt = $conn->prepare("SELECT * FROM admin_info WHERE email = :email");
     $admin_stmt->execute(['email' => $email]);
@@ -35,6 +42,17 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     
 
     }
+    if ($verif == false){
+
+
+       header("Location: ..\index.php?reg_error=verification_failed");
+        exit();
+    
+
+    }
+
+
+
 
   if ($password !== $con_password) {
         header("Location: ../index.php?reg_error=password_mismatch");
