@@ -24,7 +24,11 @@ $stmt = $conn->prepare("SELECT * FROM pollutant_values WHERE site_id = ? AND dat
 $stmt->execute([$selected_ids, $min_date_range, $max_date_range]);
 $pollutant_data_exist=$stmt->fetchALL(PDO::FETCH_ASSOC);
 
-$labels = array_reverse(array_column($pollutant_data_exist, 'date'));
+$labels = array_reverse(array_map(function($row) {
+    // Combines date and time (e.g. "2024-08-31 23:00")
+    return $row['date'] . ' ' . sprintf('%02d:00', $row['time']);
+}, $pollutant_data_exist));
+
 $values = array_reverse(array_column($pollutant_data_exist, $pollutant_value));
 
 
@@ -238,8 +242,8 @@ function toPHP(value) {
     console.log("Fetching data for site_id:", value);
 
    
-    const minDateInput = document.getElementById('min')?.value || '';
-    const maxDateInput = document.getElementById('max')?.value || '';
+    const minDateInput = document.getElementById('min')?.value || '2000-01-01';
+    const maxDateInput = document.getElementById('max')?.value || '2199-12-31';
     const pollutant_data=document.getElementById('pollutants').value;
 
 

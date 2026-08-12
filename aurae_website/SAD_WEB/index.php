@@ -193,7 +193,7 @@ if(isset($_GET['state'])){
 
 
 <script src="assets\js\form_change.js"></script>
-<script type="module" src="assets\js\email_auth.js"></script>
+<script type="module" src="config\email_auth.js"></script>
 
 </body>
 

@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, sendSignInLinkToEmail, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-import { firebaseConfig } from "../../api/user_auth.js"
+import { firebaseConfig } from "../api/user_auth.js"
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -61,7 +61,6 @@ document.getElementById("but_verify").addEventListener("click", (e) => {
 
 })
 
-
 //GOOGLE LOGIN POPUP
 document.getElementById("google_btn").addEventListener("click", () => {
 
@@ -108,7 +107,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
 
 //submit the form
 

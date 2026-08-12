@@ -1,16 +1,18 @@
 <?php
-$host="localhost";
-$dbname="air_quality_database";
-$username="root";
-$password="12345";
-
+$host = "localhost";
+$port = "5432";
+$dbname = "aurae_database"; 
+$username = "postgres";
+$password = "password";
 try{
-    $conn=new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
-
-    $conn-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    
+  
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
 }
 catch(PDOException $e){
-    die("Database Connection Failed: ").$e->getMessage();
+    die("Database Connection Failed: ".$e->getMessage());
 }
 
