@@ -1,11 +1,12 @@
 <?php 
+session_start();
+
+$old = $_SESSION['old'] ?? [];
+unset($_SESSION['old']);
 
 // Check if an error message was passed back in the URL
 $default_form = 'login_form';
 $error_message = ""; 
-
-
-
 
 if (isset($_GET['reg_error'])) {
     
@@ -45,9 +46,6 @@ if(isset($_GET['log_error'])){
         </style><?php
     }
 }
-
-
-
 
 if(isset($_GET['state'])){
     if ($_GET['state']=="success"){
@@ -98,7 +96,7 @@ if(isset($_GET['state'])){
             </div>
         <?php endif; ?>
 
-        <input type="text" class="log_email" id="email" name="email" placeholder="username@gmail.com" required>
+        <input type="text" class="log_email" id="email" name="email" value="<?php echo htmlspecialchars($old['login_email'] ?? ''); ?>" placeholder="username@gmail.com" required>
       
         <input type="password" class="log_password" id="password" name="password" placeholder="password" required>
 
@@ -127,9 +125,12 @@ if(isset($_GET['state'])){
     </form>
     </div>
 
+
+
+        <!-- register form -->
 <div class="form-box <?php echo ($default_form === 'register_form') ? 'active' : ''; ?>" id="register_form">
 
-<form class="card" id="signUp_form" method="" action="config\user_reg.php">
+<form class="card" id="signUp_form" method="POST" action="config\user_reg.php" >
 
         <div class="logo">
             <img src="assets\images\logo_aurae.png">
@@ -154,31 +155,25 @@ if(isset($_GET['state'])){
             </div>
         <?php endif; ?>
 
-        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="text" id="username" name="username" placeholder="Username" value="<?php echo htmlspecialchars($old['username'] ?? ''); ?>" required>
 
-        <input type="text" id="fname" name="fname" placeholder="First Name" required>
+        <input type="text" id="fname" name="fname" placeholder="First Name" value="<?php echo htmlspecialchars($old['fname'] ?? ''); ?>" required>
 
-        <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+        <input type="text" id="lname" name="lname" placeholder="Last Name" value="<?php echo htmlspecialchars($old['lname'] ?? ''); ?>" required>
 
-        <input type="email" class="reg_email" id="signUp_email" name="email" placeholder="@gmail.com" required> <button type="button" id="but_verify"><h6>Verify</h6></button>
+        <input type="email" class="reg_email" id="signUp_email" name="email" placeholder="@gmail.com" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>" required> <button type="button" id="but_verify"><h6>Verify</h6></button>
 
         <input type="password" class="reg_password" id="signUp_password" name="password" placeholder="password" minlength="8" required>
         
         <input type="password" class="con_password" id="con_password" name="con_password" placeholder="Confirm password" minlength="8" required>
 
-        <button type="button" id="submits_btn" >
+        <button type="submit" id="submits_btn" >
             Sign up 
         </button>
 
         <button type="button" onclick="showForm('login_form')">
             Login
         </button>
-
-      
-
-
-
-
 
         <p class="terms">
             By clicking continue, you agree to our
@@ -192,8 +187,9 @@ if(isset($_GET['state'])){
 
 
 
+
 <script src="assets\js\form_change.js"></script>
-<script type="module" src="assets\js\email_auth.js"></script>
+<script type="module" src="config\email_auth.js"></script>
 
 </body>
 

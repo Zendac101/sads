@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $port = "5432";
-$dbname = "aurae_database"; 
+$dbname = "aurae_user_database"; 
 $username = "postgres";
 $password = "password";
 try{

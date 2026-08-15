@@ -39,6 +39,7 @@ $pollutant_data_exist=$pollutant_data->fetchALL(PDO::FETCH_ASSOC);
             <table>
                <thead>
                 <th>Date</th>  
+                <th>Time</th>  
                 <th>
                     <label for="Location">Location</label>
                     <select name="Location" id="Location" onchange="toPHP(value)"><option value="">Select Location</option></select>
@@ -103,6 +104,7 @@ data.forEach(row => {
                 
                 tr.innerHTML = `
                     <td>${row.date || 'N/A'}</td>
+                    <td>${row.time || 'N/A'}</td>
                     <td>${loc_dropdown.options[loc_dropdown.selectedIndex].text}</td>
                     <td>${row.aqi || 0.0}</td>
                     <td class="${((row.status).replace(/\s+/g,'-') || 'good').toLowerCase()}">${row.status || 'Good'}</td>

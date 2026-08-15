@@ -113,7 +113,7 @@
                         </div>
                     </div>
 
-              
+
 
         </div>
 
@@ -124,10 +124,26 @@
 <script src="..\assets\js\toggle_sidebar.js">
 
 </script>
+<script>
+function fetchLatestReadings() {
+    fetch('../api/get_latest_data.php')
+        .then(response => response.json())
+        .then(res => {
+            if (res.status === 'success') {
+                document.getElementById('temp_data').innerText = res.data.temperature + " °C";
+                document.getElementById('humid_data').innerText = res.data.humidity + " %";
+            }
+        })
+        .catch(err => console.error('Error fetching sensor data:', err));
+}
 
+// Initial fetch
+fetchLatestReadings();
 
+// Auto-refresh every 3 seconds
+setInterval(fetchLatestReadings, 3000);
+</script>
 
-<script type="module" src="../assets/js/firebase_database.js"></script>
 
 
 
