@@ -9,14 +9,14 @@ function showForm(formId) {
     sessionStorage.setItem("form-state", formId)
 }
 window.addEventListener("DOMContentLoaded", () => {
-    const savedFormState = sessionStorage.getItem("form-state");
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasError = urlParams.has("reg_error") || urlParams.has("log_error") || urlParams.has("state");
 
-    if (savedFormState) {
-        // If a state was saved (like your register form id), open it!
-        showForm(savedFormState);
-    } else {
-        // Optional default: If nothing is saved, default to your login form ID
-        showForm("login_form");
+    if (!hasError) {
+        const savedFormState = sessionStorage.getItem("form-state");
+        if (savedFormState) {
+            showForm(savedFormState);
+        }
     }
 
 

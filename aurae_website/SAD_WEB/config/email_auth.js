@@ -16,21 +16,6 @@ document.getElementById("but_verify").addEventListener("click", (e) => {
     e.preventDefault();
 
 
-    const pendingData = {
-        username: document.getElementById("username") ? document.getElementById("username").value : "",
-        fname: document.getElementById("fname") ? document.getElementById("fname").value : "",
-        lname: document.getElementById("lname") ? document.getElementById("lname").value : "",
-        email: document.getElementById("signUp_email") ? document.getElementById("signUp_email").value : "",
-        password: document.getElementById("signUp_password") ? document.getElementById("signUp_password").value : "",
-        conPassword: document.getElementById("con_password") ? document.getElementById("con_password").value : ""
-    };
-
-
-    window.sessionStorage.setItem('pendingSignUpData', JSON.stringify(pendingData));
-
-
-
-
     const actionCodeSettings = {
         // URL you want to redirect back to. The domain (www.example.com) for this
         // URL must be in the authorized domains list in the Firebase Console.
@@ -87,53 +72,9 @@ document.getElementById("google_btn").addEventListener("click", () => {
 })
 
 
-//RECOVER THE INPUTS
-let verified_email = false;
-
-window.addEventListener("DOMContentLoaded", () => {
-
-
-    const savedInputs = JSON.parse(sessionStorage.getItem('pendingSignUpData'));
-    if (savedInputs) {
-        if (document.getElementById("username")) document.getElementById("username").value = savedInputs.username || "";
-        if (document.getElementById("fname")) document.getElementById("fname").value = savedInputs.fname || "";
-        if (document.getElementById("lname")) document.getElementById("lname").value = savedInputs.lname || "";
-        if (document.getElementById("signUp_email")) document.getElementById("signUp_email").value = savedInputs.email || "";
-        if (document.getElementById("signUp_password")) document.getElementById("signUp_password").value = savedInputs.password || "";
-        if (document.getElementById("con_password")) document.getElementById("con_password").value = savedInputs.conPassword || "";
-
-        verified_email = true;
-    }
-
-
-});
-
-//submit the form
-
-document.getElementById("submits_btn").addEventListener("click", (e) => {
-
-    e.preventDefault();
-
-    const pendingData = {
-        username: document.getElementById("username") ? document.getElementById("username").value : "",
-        fname: document.getElementById("fname") ? document.getElementById("fname").value : "",
-        lname: document.getElementById("lname") ? document.getElementById("lname").value : "",
-        email: document.getElementById("signUp_email") ? document.getElementById("signUp_email").value : "",
-        password: document.getElementById("signUp_password") ? document.getElementById("signUp_password").value : "",
-        conPassword: document.getElementById("con_password") ? document.getElementById("con_password").value : ""
-    };
-
-
-    window.sessionStorage.setItem('pendingSignUpData', JSON.stringify(pendingData));
-
-    var sub_form = document.getElementById("signUp_form");
 
 
 
-    sub_form.method = "POST";
-    sub_form.submit();
-
-})
 
 
 
