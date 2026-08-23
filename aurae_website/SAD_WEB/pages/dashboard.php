@@ -125,6 +125,7 @@
 
 </script>
 <script>
+    
 function fetchLatestReadings() {
     fetch('../api/get_latest_data.php')
         .then(response => response.json())
