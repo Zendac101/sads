@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE php>
+<php lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aurae Admin</title>
+
+
+        <link rel="stylesheet" href="{% static 'css/data_management_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/data_table_style.css' %}">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            {% include 'sidebar.html' %}
+
+            <main class="main">
+                {% include 'topbar.html' %}
+
+                <div class="header">
+                    <div class="header-left">
+                        <h1>Data Management</h1>
+                        <p>Easily manage and organize air quality data.</p>
+                    </div>
+                </div>
+
+                <div class="data-table">
+
+
+                    <div>
+
+                        <table id="pollutant_table">
+                            <thead>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>
+                                    <label for="Location">Location</label>
+                                    <select name="Location" id="Location">
+                                        <option value="">Select Location</option>
+                                        {% for site_id, site_name in location_options %}
+                                        <option value="{{ site_id }}">{{ site_name }}</option>
+                                        {% empty %}
+                                        <!-- This line will only show if your database returned zero rows -->
+                                        <option value="">[No records found or column name error]</option>
+                                        {% endfor %}
+
+                                    </select>
+
+
+                                </th>
+                                <th>AQI</th>
+                                <th>Status</th>
+                                <th>So2</th>
+                                <th>O3</th>
+                                <th>Co</th>
+                                <th>No2</th>
+                                <th>NoX</th>
+                                <th>No</th>
+
+
+                            </thead>
+
+
+                            <tbody id="table_pollutant">
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="table-actions">
+                    <button class="green">Upload Data</button>
+                    <button class="light">Download Data</button>
+                    <button class="light">Delete Data</button>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="{% static 'js/toggle_sidebar.js' %}">
+
+        </script>
+
+
+    </body>
+</php>

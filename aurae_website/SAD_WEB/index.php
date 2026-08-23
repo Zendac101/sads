@@ -78,7 +78,7 @@ if(isset($_GET['state'])){
 
 
 <div class="form-box <?php echo ($default_form === 'login_form') ? 'active' : ''; ?>"  id="login_form">
-    <form class="card" id="logIn_form" method= "POST" action="config\login_ver.php" >
+    <form class="card" id="login_form" method= "POST" action="config\login_ver.php" >
 
         <div class="logo">
             <img src="assets\images\logo_aurae.png">
